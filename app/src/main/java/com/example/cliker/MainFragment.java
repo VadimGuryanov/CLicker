@@ -2,7 +2,6 @@ package com.example.cliker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -27,6 +26,7 @@ public class MainFragment extends Fragment {
 
     public void onClickEasyPoint() {
         Intent intent = new Intent();
+
     }
 
 }
