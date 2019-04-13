@@ -12,7 +12,12 @@ import android.view.ViewGroup;
 
 import com.example.cliker.R;
 
-public class ShopActivity extends Fragment {
+public class ShopFragment extends Fragment {
+
+    public static ShopFragment newInstance() {
+        ShopFragment fragment = new ShopFragment();
+        return fragment;
+    }
 
     @Nullable
     @Override
