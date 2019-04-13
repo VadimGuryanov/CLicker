@@ -4,6 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".easypoints.EasyPointsActivity">
+    tools:context=".study.StudyFragment">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="192dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="176dp"
+        android:text="STUDY'"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

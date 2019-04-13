@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.cliker.R;
 
-public class EasyPoints extends AppCompatActivity {
+public class EasyPointsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
