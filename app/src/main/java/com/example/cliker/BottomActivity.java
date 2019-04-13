@@ -26,9 +26,11 @@ public class BottomActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     openFragment(ShopFragment.newInstance());
                     return true;
-
                 case R.id.navigation_notifications:
                     openFragment(StudyFragment.newInstance());
+                    return true;
+                case R.id.navigation_dashboard:
+                    openFragment(MainFragment.newInstance());
                     return true;
             }
             return false;

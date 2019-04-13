@@ -10,12 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.cliker.shop.ShopFragment;
+public class MainFragment extends Fragment {
 
-public class MainActivity extends Fragment {
-
-    public static ShopFragment newInstance() {
-        ShopFragment fragment = new ShopFragment();
+    public static MainFragment newInstance() {
+        MainFragment fragment = new MainFragment();
         return fragment;
     }
 
@@ -25,4 +23,5 @@ public class MainActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_main, container, false);
         return view;
     }
+
 }
