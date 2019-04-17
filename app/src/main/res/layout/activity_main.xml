@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainFragment">
 
     <Button
         android:id="@+id/button6"
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:text="ИЗИ ПОИНТ"
+        android:onClick="onClickEasyPoint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

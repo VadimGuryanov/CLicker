@@ -1,9 +1,11 @@
 package com.example.cliker;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.example.cliker.easypoints.EasyPointActivity;
 import com.example.cliker.shop.ShopFragment;
 
 import com.example.cliker.study.StudyFragment;
@@ -13,29 +15,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
+import android.view.View;
 
 public class BottomActivity extends AppCompatActivity {
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    openFragment(ShopFragment.newInstance());
-                    return true;
-                case R.id.navigation_notifications:
-                    openFragment(StudyFragment.newInstance());
-                    return true;
-                case R.id.navigation_dashboard:
-                    openFragment(MainFragment.newInstance());
-                    return true;
-            }
-            return false;
-        }
-    };
+            = item -> {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        openFragment(ShopFragment.newInstance());
+                        return true;
+                    case R.id.navigation_notifications:
+                        openFragment(StudyFragment.newInstance());
+                        return true;
+                    case R.id.navigation_dashboard:
+                        openFragment(MainFragment.newInstance());
+                        return true;
+                }
+                return false;
+            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +51,10 @@ public class BottomActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container_main, fragment)
                 .commit();
+    }
+
+    public void onClickEasyPoint(View view) {
+        Intent intent = new Intent(view.getContext(), EasyPointActivity.class);
+        startActivity(intent);
     }
 }

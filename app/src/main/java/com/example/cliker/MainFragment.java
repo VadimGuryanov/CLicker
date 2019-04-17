@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.cliker.easypoints.EasyPointActivity;
+
 public class MainFragment extends Fragment {
 
     public static MainFragment newInstance() {
@@ -22,11 +24,6 @@ public class MainFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main, container, false);
         return view;
-    }
-
-    public void onClickEasyPoint() {
-        Intent intent = new Intent();
-
     }
 
 }

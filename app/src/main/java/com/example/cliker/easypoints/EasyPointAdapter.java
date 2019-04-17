@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class EasyPointAdapter extends RecyclerView.Adapter<EventHolder> {
 
-    private ArrayList<Event> events;
     private EasyPointCallBack callBack;
 
-    public EasyPointAdapter(ArrayList<Event> events, EasyPointCallBack callBack) {
-        this.events = events;
+    public EasyPointAdapter(EasyPointCallBack callBack) {
         this.callBack = callBack;
     }
 
@@ -31,12 +29,14 @@ public class EasyPointAdapter extends RecyclerView.Adapter<EventHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull EventHolder eventHolder, int position) {
-        eventHolder.bind(events.get(position));
-        eventHolder.itemView.setOnClickListener(view -> callBack.itemClick());
+        eventHolder.bind(position);
+        eventHolder.itemView.setOnClickListener(view -> callBack.itemClick(position));
     }
 
     @Override
     public int getItemCount() {
-        return events.size();
+        return EventsData.event_name.length;
     }
+
+
 }
