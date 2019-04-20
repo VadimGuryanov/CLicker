@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ClothesAdapter extends RecyclerView.Adapter<ClothHolder> {
 
     private ClothesCallBack clothesCallBack;
+    public static ArrayList<Cloth> clothes;
 
-    public ClothesAdapter(ClothesCallBack clothesCallBack) {
+    public ClothesAdapter(ArrayList<Cloth> clothes, ClothesCallBack clothesCallBack) {
         this.clothesCallBack = clothesCallBack;
+        this.clothes = clothes;
     }
 
     @NonNull
@@ -29,7 +31,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ClothHolder holder, int position) {
-        holder.bind(position);
+        holder.bind(clothes.get(position));
         holder.itemView.setOnClickListener(view -> clothesCallBack.itemClick(position + ""));
     }
 

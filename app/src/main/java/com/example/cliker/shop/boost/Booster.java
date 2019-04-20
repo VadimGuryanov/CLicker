@@ -1,11 +1,11 @@
-package com.example.cliker.shop.clothes;
+package com.example.cliker.shop.boost;
 
-public class Cloth {
+public class Booster {
 
     private String name, description;
     private int point, image;
 
-    public Cloth(String name, String description, int image, int point) {
+    public Booster(String name, String description, int image, int point) {
         this.name = name;
         this.description = description;
         this.image = image;

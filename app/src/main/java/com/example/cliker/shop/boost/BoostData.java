@@ -1,21 +1,21 @@
-package com.example.cliker.shop.clothes;
+package com.example.cliker.shop.boost;
 
 import com.example.cliker.R;
 
-public class ClothData {
+public class BoostData {
 
     public static final int CAPASITY = 3;
 
     public static String[] cloth_name = new String[] {
-            "Футболочка",
-            "Маечка",
-            "Худичка"
+            "Благословение Абрамского",
+            "Мозг",
+            "Прикольный стикер на ноут"
     };
 
     public static String[] description = new String[] {
-            "Чоткая футболочка",
-            "Зачетная маечка",
-            "Худи, а не кофта!"
+            "Частичка великого",
+            "Нужная штука, на алгеме пригодится",
+            "Стильно, модно, молодежно"
     };
 
     public static int[] point = new int[] {
