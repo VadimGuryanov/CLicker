@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".home.HomeFragment"></activity>
+        <activity android:name=".clickers.InfaClick" />
+        <activity android:name=".clickers.FizraClick" />
+        <activity android:name=".clickers.AlgemClick" />
         <activity android:name=".easypoints.EasyPointsActivity" />
         <activity android:name=".BottomActivity">
             <intent-filter>
