@@ -11,16 +11,20 @@ import com.example.cliker.R;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import android.app.Fragment;
-
 import java.util.ArrayList;
 
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class EasyPointFragment extends Fragment implements EasyPointCallBack {
 
     public static ArrayList<Event> a;
+
+    public static EasyPointFragment newInstance() {
+        EasyPointFragment fragment = new EasyPointFragment();
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -53,4 +57,7 @@ public class EasyPointFragment extends Fragment implements EasyPointCallBack {
         intent.putExtra("index", i);
         startActivity(intent);
     }
+
+
+
 }

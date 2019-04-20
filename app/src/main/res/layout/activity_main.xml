@@ -11,7 +11,7 @@
         android:layout_width="113dp"
         android:layout_height="55dp"
         android:text="ИЗИ ПОИНТ"
-        android:onClick="onClickEasyPoint"
+        android:onClick="onClick"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
