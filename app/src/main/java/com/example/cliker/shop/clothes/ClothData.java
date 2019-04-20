@@ -7,9 +7,9 @@ public class ClothData {
     public static final int CAPASITY = 3;
 
     public static String[] cloth_name = new String[] {
-            "Футболочка",
-            "Маечка",
-            "Худичка"
+            "Футболка",
+            "Футболка",
+            "Футболка"
     };
 
     public static String[] description = new String[] {
@@ -23,8 +23,8 @@ public class ClothData {
     };
 
     public static int[] image = new int[] {
-            R.drawable.p_3,
-            R.drawable.p_2,
-            R.drawable.p_1
+            R.drawable.t_itis,
+            R.drawable.t_rainbow,
+            R.drawable.t_polo
     };
 }
