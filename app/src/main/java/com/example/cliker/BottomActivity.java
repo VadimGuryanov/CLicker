@@ -57,4 +57,5 @@ public class BottomActivity extends AppCompatActivity {
         Intent intent = new Intent(view.getContext(), EasyPointActivity.class);
         startActivity(intent);
     }
+
 }
