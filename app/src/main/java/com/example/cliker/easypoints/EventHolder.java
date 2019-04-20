@@ -24,11 +24,11 @@ public class EventHolder extends RecyclerView.ViewHolder {
         this.image = itemView.findViewById(R.id.image_event);
     }
 
-    public void bind(int i) {
-        this.name.setText(EventsData.event_name[i]);
-        this.point.setText(String.valueOf("Кликни " + EventsData.point[i] + " раз и пройди событие!"));
-        this.description.setText(EventsData.description[i]);
-        this.image.setImageResource(EventsData.image[i]);
+    public void bind(Event event) {
+        this.name.setText(event.getName());
+        this.point.setText(String.valueOf("Кликни " + event.getPoint() + " раз и пройди событие!"));
+        this.description.setText(event.getDescription());
+        this.image.setImageResource(event.getImage());
     }
 
 

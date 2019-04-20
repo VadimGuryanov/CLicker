@@ -4,6 +4,8 @@ import com.example.cliker.R;
 
 public class EventsData {
 
+    public static final int CAPACITY = 4;
+
     public static String[] event_name = new String[] {
             "Медосмотр",
             "Концерт",
