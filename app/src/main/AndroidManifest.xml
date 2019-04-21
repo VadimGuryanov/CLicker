@@ -16,6 +16,7 @@
         <activity android:name=".clickers.FizraClick" />
         <activity android:name=".clickers.AlgemClick" />
         <activity android:name=".easypoints.EasyPointsActivity" />
+        <activity android:name=".easypoints.EventActivity" />
         <activity android:name=".BottomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
