@@ -56,7 +56,7 @@ public class MoneyProcessing {
 
             );
             setFizraMoney(fizraMoney = Integer.parseInt(bufferedReaderFizra.readLine()));
-            bufferedReaderAlgem.close();
+            bufferedReaderFizra.close();
             BufferedReader bufferedReaderInfa = new BufferedReader(
                     new InputStreamReader(
                             assets.open("infaMoney.txt"))

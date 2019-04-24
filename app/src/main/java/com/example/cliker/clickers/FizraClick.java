@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +13,11 @@ import android.widget.TextView;
 
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
-import com.example.cliker.money.MoneyProcessing;
+import com.example.cliker.money.MoneyProcessingFizra;
 
 import java.io.IOException;
+
+import static com.example.cliker.BottomActivity.moneyProcessingInfa;
 
 public class FizraClick extends Fragment {
 
@@ -24,7 +25,7 @@ public class FizraClick extends Fragment {
     TextView fizraClickPoints;
     Button fizraButton;
     int current;
-    MoneyProcessing moneyProcessing = BottomActivity.moneyProcessing;
+    MoneyProcessingFizra moneyProcessingFizra = BottomActivity.moneyProcessingFizra;
 
     public static int number = 1;
 
@@ -42,7 +43,7 @@ public class FizraClick extends Fragment {
         fizraClickPoints = view.findViewById(R.id.tv_fizraClickPoints);
         fizraButton.setOnClickListener(x -> {
             try {
-                algemButtonClick();
+                fizraButtonClick();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -54,16 +55,15 @@ public class FizraClick extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        fizraClickPoints.setText(moneyProcessing.getFizraMoney()+"");
+        fizraClickPoints.setText(moneyProcessingFizra.getText() +"");
     }
 
 
-    public void algemButtonClick() throws IOException {
-        current = moneyProcessing.getFizraMoney()+number;
-        moneyProcessing.setFizraMoney(current);
+    public void fizraButtonClick() throws IOException {
+        current = Integer.parseInt(moneyProcessingFizra.getText())+number;
         String s = Integer.toString(current);
+        moneyProcessingFizra.saveText(s);
         fizraClickPoints.setText(s);
     }
-
 
 }
