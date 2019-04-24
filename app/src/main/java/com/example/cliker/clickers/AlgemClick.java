@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
-import com.example.cliker.money.MoneyProcessing;
+import com.example.cliker.money.MoneyProcessingAlgem;
 
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ public class AlgemClick extends Fragment {
     TextView algemClickPoints;
     Button algemButton;
     int current;
-    MoneyProcessing moneyProcessing = BottomActivity.moneyProcessing;
+    MoneyProcessingAlgem moneyProcessingAlgem = BottomActivity.moneyProcessingAlgem;
 
     public static int number = 1;
 
@@ -54,14 +53,14 @@ public class AlgemClick extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        algemClickPoints.setText(moneyProcessing.getAlgemMoney()+"");
+        algemClickPoints.setText(moneyProcessingAlgem.getText() +"");
     }
 
 
     public void algemButtonClick() throws IOException {
-        current = moneyProcessing.getAlgemMoney()+number;
-        moneyProcessing.setAlgemMoney(current);
+        current = Integer.parseInt(moneyProcessingAlgem.getText())+number;
         String s = Integer.toString(current);
+        moneyProcessingAlgem.saveText(s);
         algemClickPoints.setText(s);
     }
 
