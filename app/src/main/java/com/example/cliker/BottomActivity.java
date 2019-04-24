@@ -66,5 +66,4 @@ public class BottomActivity extends AppCompatActivity {
                 .replace(R.id.container_main, fragment)
                 .commit();
     }
-
 }
