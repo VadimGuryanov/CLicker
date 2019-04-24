@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".study.StudyFragment">
+   >
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -12,8 +12,8 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
             android:background="@color/colorPrimaryDark"
             android:visibility="visible"
             app:tabGravity="fill"

@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".clickers.InfaClick">
+    android:background="@android:color/white" >
 
     <Button
         android:id="@+id/btn_infa"
-        android:layout_width="187dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="112dp"
-        android:text="INFA CLICK"
+        android:layout_width="314dp"
+        android:layout_height="236dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="244dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/mega_nout_2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/tv_infaClickPoints"

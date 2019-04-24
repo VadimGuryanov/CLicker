@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
+import com.example.cliker.easypoints.EasyPointFragment;
 import com.example.cliker.money.MoneyProcessing;
 import com.example.cliker.money.MoneyProcessing;
 import com.example.cliker.shop.ShopFragment;
@@ -36,7 +37,7 @@ public class BottomActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_home:
-                    openFragment(ShopFragment.newInstance());
+                    openFragment(MainFragment.newInstance());
                     return true;
             }
             return false;
