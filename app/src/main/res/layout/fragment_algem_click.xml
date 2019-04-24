@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".clickers.AlgemClick">
+    android:background="@android:color/white" >
 
     <Button
         android:id="@+id/btn_algem"
-        android:layout_width="187dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginEnd="112dp"
+        android:layout_width="307dp"
+        android:layout_height="237dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/al_gem"
         android:text="ALGEM CLICK"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

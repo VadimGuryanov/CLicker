@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BottomActivity">
+    >
 
     <FrameLayout
         android:id="@+id/container_main"
@@ -16,11 +16,13 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="61dp"
         android:layout_gravity="bottom"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
+        android:foreground="@drawable/b_n_2"
+        app:itemIconTint="#2196F3"
         app:menu="@menu/navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

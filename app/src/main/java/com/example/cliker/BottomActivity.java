@@ -3,7 +3,6 @@ package com.example.cliker;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-
 import com.example.cliker.money.MoneyProcessingAlgem;
 import com.example.cliker.money.MoneyProcessingFizra;
 import com.example.cliker.money.MoneyProcessingInfa;
