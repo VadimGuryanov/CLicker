@@ -55,7 +55,7 @@ public class FizraClick extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        fizraClickPoints.setText(moneyProcessingInfa.getText() +"");
+        fizraClickPoints.setText(moneyProcessingFizra.getText() +"");
     }
 
 
