@@ -17,13 +17,13 @@ public class ShopActivity extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = item -> {
         switch (item.getItemId()) {
-            case R.id.navigation_home:
+            case R.id.navigation_shop:
                 openFragment(ClothesFragment.newInstance());
                 return true;
-            case R.id.navigation_notifications:
+            case R.id.navigation_home:
                 openFragment(BoostFragment.newInstance());
                 return true;
-            case R.id.navigation_dashboard:
+            case R.id.navigation_study:
                 openFragment(MainFragment.newInstance());
                 return true;
         }
