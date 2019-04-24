@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,8 @@ import android.widget.TextView;
 
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
-import com.example.cliker.money.MoneyProcessing;
+import com.example.cliker.money.MoneyProcessingAlgem;
+import com.example.cliker.money.MoneyProcessingInfa;
 
 import java.io.IOException;
 
@@ -24,7 +24,7 @@ public class InfaClick extends Fragment {
     TextView infaClickPoints;
     Button infaButton;
     int current;
-    MoneyProcessing moneyProcessing = BottomActivity.moneyProcessing;
+    MoneyProcessingInfa moneyProcessingInfa = BottomActivity.moneyProcessingInfa;
 
     public static int number = 1;
 
@@ -42,7 +42,7 @@ public class InfaClick extends Fragment {
         infaClickPoints = view.findViewById(R.id.tv_infaClickPoints);
         infaButton.setOnClickListener(x -> {
             try {
-                algemButtonClick();
+                infaButtonClick();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -54,14 +54,14 @@ public class InfaClick extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        infaClickPoints.setText(moneyProcessing.getInfaMoney()+"");
+        infaClickPoints.setText(moneyProcessingInfa.getText() +"");
     }
 
 
-    public void algemButtonClick() throws IOException {
-        current = moneyProcessing.getInfaMoney()+number;
-        moneyProcessing.setInfaMoney(current);
+    public void infaButtonClick() throws IOException {
+        current = Integer.parseInt(moneyProcessingInfa.getText())+number;
         String s = Integer.toString(current);
+        moneyProcessingInfa.saveText(s);
         infaClickPoints.setText(s);
     }
 

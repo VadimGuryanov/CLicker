@@ -4,8 +4,9 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
-import com.example.cliker.money.MoneyProcessing;
-import com.example.cliker.money.MoneyProcessing;
+import com.example.cliker.money.MoneyProcessingAlgem;
+import com.example.cliker.money.MoneyProcessingFizra;
+import com.example.cliker.money.MoneyProcessingInfa;
 import com.example.cliker.shop.ShopFragment;
 import com.example.cliker.study.StudyFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -14,12 +15,13 @@ import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 
 public class BottomActivity extends AppCompatActivity {
 
-    public static MoneyProcessing moneyProcessing;
+    public static MoneyProcessingAlgem moneyProcessingAlgem;
+    public static MoneyProcessingFizra moneyProcessingFizra;
+    public static MoneyProcessingInfa moneyProcessingInfa;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -36,7 +38,7 @@ public class BottomActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_home:
-                    openFragment(ShopFragment.newInstance());
+                    openFragment(MainFragment.newInstance());
                     return true;
             }
             return false;
@@ -51,7 +53,9 @@ public class BottomActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_home);
         try {
-            moneyProcessing = new MoneyProcessing(getAssets());
+            moneyProcessingAlgem = new MoneyProcessingAlgem(this);
+            moneyProcessingFizra = new MoneyProcessingFizra(this);
+            moneyProcessingInfa = new MoneyProcessingInfa(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
