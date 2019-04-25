@@ -32,7 +32,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothHolder> {
     @Override
     public void onBindViewHolder(@NonNull ClothHolder holder, int position) {
         holder.bind(clothes.get(position));
-        holder.itemView.setOnClickListener(view -> clothesCallBack.itemClick(position + ""));
+        holder.itemView.setOnClickListener(view -> clothesCallBack.itemClick(position));
     }
 
     @Override

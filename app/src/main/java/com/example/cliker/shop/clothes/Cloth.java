@@ -4,12 +4,32 @@ public class Cloth {
 
     private String name, description;
     private int point, image;
+    private boolean isSold;
+    private int image_boy;
 
-    public Cloth(String name, String description, int image, int point) {
+    public Cloth(String name, String description, int image, int point, int image_boy) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.point = point;
+        this.isSold = false;
+        this.image_boy = image_boy;
+    }
+
+    public int getImage_boy() {
+        return image_boy;
+    }
+
+    public void setImage_boy(int image_boy) {
+        this.image_boy = image_boy;
+    }
+
+    public boolean isSold() {
+        return isSold;
+    }
+
+    public void setSold(boolean sold) {
+        isSold = sold;
     }
 
     public String getName() {

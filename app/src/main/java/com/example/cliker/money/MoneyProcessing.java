@@ -64,6 +64,8 @@ public class MoneyProcessing {
             );
             setInfaMoney(infaMoney = Integer.parseInt(bufferedReaderInfa.readLine()));
             bufferedReaderInfa.close();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

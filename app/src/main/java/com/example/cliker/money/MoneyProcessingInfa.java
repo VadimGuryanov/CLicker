@@ -13,7 +13,7 @@ public class MoneyProcessingInfa {
     public String myMoney = "myMoney";
 
     public static final String INFA = "myprs";
-    public static final String nameKey = "nameey";
+    public static final String nameKey = "infa";
 
     private SharedPreferences sharedPrefs;
 

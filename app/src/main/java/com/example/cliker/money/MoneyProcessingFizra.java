@@ -13,7 +13,7 @@ public class MoneyProcessingFizra {
     public String myMoney = "myMoney";
 
     public static final String FIZRA = "yprefs";
-    public static final String nameKey = "nameKy";
+    public static final String nameKey = "fizra";
 
     private SharedPreferences sharedPrefs;
 

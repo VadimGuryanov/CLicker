@@ -26,4 +26,8 @@ public class TechData {
             R.drawable.t_rainbow,
             R.drawable.t_polo
     };
+
+    public static int[] boosts = new int[] {
+            1,2,3
+    };
 }

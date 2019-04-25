@@ -13,7 +13,7 @@ public class MoneyProcessingAlgem {
     public String myMoney = "myMoney";
 
     public static final String ALGEM = "ms";
-    public static final String nameKey = "naey";
+    public static final String nameKey = "algem";
 
     private SharedPreferences sharedPrefs;
 
