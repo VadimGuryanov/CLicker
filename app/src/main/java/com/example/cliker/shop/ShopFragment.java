@@ -16,6 +16,7 @@ import android.widget.Button;
 import com.example.cliker.R;
 import com.example.cliker.shop.boost.BoostFragment;
 import com.example.cliker.shop.clothes.ClothesFragment;
+import com.example.cliker.shop.tech.TechFragment;
 import com.example.cliker.study.StudyFragment;
 
 import static com.example.cliker.R.id.btn_clothes;
@@ -85,6 +86,6 @@ public class ShopFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int index = translateIdToIndex(v.getId());
-        openFragment(index, ClothesFragment.newInstance(), ClothesFragment.newInstance(), BoostFragment.newInstance());
+        openFragment(index, ClothesFragment.newInstance(), TechFragment.newInstance(), BoostFragment.newInstance());
     }
 }

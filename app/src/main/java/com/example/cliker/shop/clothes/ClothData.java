@@ -13,9 +13,9 @@ public class ClothData {
     };
 
     public static String[] description = new String[] {
-            "Чоткая футболочка",
-            "Зачетная маечка",
-            "Худи, а не кофта!"
+            "Будь на нужной волне!",
+            "В ней можно и к Корнеевой",
+            "Для уважаемых персон"
     };
 
     public static int[] point = new int[] {
@@ -23,8 +23,8 @@ public class ClothData {
     };
 
     public static int[] image = new int[] {
-            R.drawable.t_itis,
             R.drawable.t_rainbow,
-            R.drawable.t_polo
+            R.drawable.t_polo,
+            R.drawable.t_fff
     };
 }

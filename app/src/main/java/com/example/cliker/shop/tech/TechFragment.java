@@ -29,12 +29,12 @@ public class TechFragment extends Fragment implements TechCallBack {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tech, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_forShop);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_forTech);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         RecyclerView.Adapter adapter = new TechAdapter(this, getTech());
         recyclerView.setAdapter(adapter);
-        return recyclerView;
+        return view;
     }
 
     public ArrayList<Devise> getTech(){
