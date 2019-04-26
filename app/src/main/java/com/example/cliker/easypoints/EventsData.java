@@ -30,4 +30,8 @@ public class EventsData {
             R.drawable.sport,
             R.drawable.stud_vesna,
     };
+
+    public static int[] f = new int[] {
+            R.drawable.boy_itis
+    };
 }

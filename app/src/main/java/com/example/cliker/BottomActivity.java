@@ -12,6 +12,7 @@ import com.example.cliker.money.MoneyProcessingInfaBalance;
 import com.example.cliker.shop.ShopFragment;
 import com.example.cliker.shop.boost.BoostProcessing;
 import com.example.cliker.shop.clothes.ClothesProcessing;
+import com.example.cliker.shop.clothes.WearCLothesProcessing;
 import com.example.cliker.shop.tech.TechProcessing;
 import com.example.cliker.study.StudyFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,6 +35,7 @@ public class BottomActivity extends AppCompatActivity {
     public static BoostProcessing boostProcessing;
     public static ClothesProcessing clothesProcessing;
     public static TechProcessing techProcessing;
+    public static WearCLothesProcessing wearCLothesProcessing;
     public static int count_fizra;
     public static int count_infa;
     public static int count_algem;
@@ -77,6 +79,7 @@ public class BottomActivity extends AppCompatActivity {
             boostProcessing = new BoostProcessing(this);
             clothesProcessing = new ClothesProcessing(this);
             techProcessing = new TechProcessing(this);
+            wearCLothesProcessing = new WearCLothesProcessing(this);
         } catch (IOException e) {
             e.printStackTrace();
         }

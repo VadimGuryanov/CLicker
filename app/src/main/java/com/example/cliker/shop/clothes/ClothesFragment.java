@@ -59,8 +59,9 @@ public class ClothesFragment extends Fragment implements ClothesCallBack, View.O
                                 if (Integer.parseInt(moneyProcessingFizraBalance.getText()) >= ClothesAdapter.clothes.get(i).getPoint()) {
                                     Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                                     ClothesAdapter.clothes.get(i).setSold(true);
-
+                                    MainFragment.index_image_boy = ClothesAdapter.clothes.get(i).getImage_boy();
                                     ClothData.clothesProcessing.saveText(recording());
+                                    ClothData.wearCLothesProcessing.saveText(ClothesAdapter.clothes.get(i).getImage_boy() + "");
                                     int current = Integer.parseInt(moneyProcessingFizraBalance.getText()) - ClothesAdapter.clothes.get(i).getPoint();
                                     String s = Integer.toString(current);
                                     moneyProcessingFizraBalance.saveText(s);
@@ -77,6 +78,18 @@ public class ClothesFragment extends Fragment implements ClothesCallBack, View.O
         }
         else {
             Toast.makeText(getContext(), "Эта футболочка уже куплена", Toast.LENGTH_SHORT).show();
+            builder.setTitle("Смена футболочки")
+                    .setMessage("Вы действительно хотите поменять футболочку?")
+                    .setCancelable(false)
+                    .setPositiveButton("Да",
+                            (dialog, id) -> {
+                                Toast.makeText(getContext(), "Переодеваемся!", Toast.LENGTH_SHORT).show();
+                                ClothData.wearCLothesProcessing.saveText(ClothesAdapter.clothes.get(i).getImage_boy() + "");
+                            })
+                    .setNegativeButton("Отмена",
+                            (dialog, id) -> dialog.cancel());
+            AlertDialog alert = builder.create();
+            alert.show();
         }
     }
 

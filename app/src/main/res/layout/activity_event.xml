@@ -86,7 +86,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:onClick="goMain"
-        android:text="Домой"
+        android:text="Забираем приз и домой!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -8,6 +8,7 @@ public class ClothData {
 
     public static final int CAPASITY = 3;
     public static ClothesProcessing clothesProcessing = BottomActivity.clothesProcessing;
+    public static WearCLothesProcessing wearCLothesProcessing = BottomActivity.wearCLothesProcessing;
 
     public static String[] cloth_name = new String[] {
             "Футболка",
@@ -32,7 +33,7 @@ public class ClothData {
     };
 
     public static int[] image_boy = new int[] {
-            R.drawable.boy_itis,
+            R.drawable.boy_rainbow,
             R.drawable.boy_polo,
             R.drawable.boy_fff
     };

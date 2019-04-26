@@ -9,7 +9,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
+import com.example.cliker.shop.clothes.Cloth;
+import com.example.cliker.shop.clothes.ClothData;
+import com.example.cliker.shop.clothes.ClothesAdapter;
+import com.example.cliker.shop.clothes.ClothesFragment;
+
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EventActivity extends AppCompatActivity {
@@ -65,7 +71,8 @@ public class EventActivity extends AppCompatActivity {
 
     public void goMain(View view) {
         Intent intent = new Intent(this, BottomActivity.class);
-        intent.putExtra("count", count);
+        int i = getIntent().getIntExtra("index", 0);
+        ClothData.wearCLothesProcessing.saveText(EventsData.f[0] + "");
         startActivity(intent);
     }
 }
