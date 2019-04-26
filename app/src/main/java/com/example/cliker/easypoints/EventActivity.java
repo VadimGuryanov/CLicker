@@ -9,6 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
+import com.example.cliker.clickers.AlgemClick;
+import com.example.cliker.clickers.InfaClick;
+import com.example.cliker.shop.boost.BoostAdapter;
 import com.example.cliker.shop.clothes.Cloth;
 import com.example.cliker.shop.clothes.ClothData;
 import com.example.cliker.shop.clothes.ClothesAdapter;
@@ -66,6 +69,7 @@ public class EventActivity extends AppCompatActivity {
             view.setEnabled(false);
             int i = getIntent().getIntExtra("index", 0);
             EasyPointAdapter.events.get(i).setComplete(true);
+            EventsData.eventProcessing.saveText(recording());
         }
     }
 
@@ -73,6 +77,19 @@ public class EventActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BottomActivity.class);
         int i = getIntent().getIntExtra("index", 0);
         ClothData.wearCLothesProcessing.saveText(EventsData.f[0] + "");
+        int algemAndFizra = (i + 1 + AlgemClick.number);
+        int infa = (i + 1 + InfaClick.number);
+        AlgemClick.algemFizraProcessing.saveText(algemAndFizra + "");
+        InfaClick.infaProcessing.saveText( infa + "");
         startActivity(intent);
     }
+
+    private String recording() {
+        String bools = "";
+        for (int i = 0; i < EasyPointAdapter.events.size(); i++) {
+            bools += String.valueOf(EasyPointAdapter.events.get(i).isComplete() + " ");
+        }
+        return bools;
+    }
+
 }

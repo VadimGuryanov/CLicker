@@ -2,6 +2,7 @@ package com.example.cliker.easypoints;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,8 @@ public class EasyPointFragment extends Fragment implements EasyPointCallBack {
         if (a == null) {
             a = new ArrayList<>();
             for (int i = 0; i < EventsData.CAPACITY; i++) {
-                a.add(new Event(EventsData.event_name[i], EventsData.description[i], EventsData.point[i], EventsData.image[i], false));
+                a.add(new Event(EventsData.event_name[i], EventsData.description[i], EventsData.point[i],
+                        EventsData.image[i], EventsData.getIsSold()[i]));
             }
         }
         return a;
@@ -57,7 +59,6 @@ public class EasyPointFragment extends Fragment implements EasyPointCallBack {
         intent.putExtra("index", i);
         startActivity(intent);
     }
-
 
 
 }

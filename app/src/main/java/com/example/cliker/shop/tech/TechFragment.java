@@ -70,6 +70,7 @@ public class TechFragment extends Fragment implements TechCallBack {
                                 if (Integer.parseInt(moneyProcessingInfaBalance.getText()) >= TechAdapter.devises.get(i).getPoint()) {
                                     Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                                     TechAdapter.devises.get(i).setSold(true);
+                                    InfaClick.infaProcessing.saveText((TechAdapter.devises.get(i).getBoost() + InfaClick.number) + "");
                                     InfaClick.number += TechAdapter.devises.get(i).getBoost();
                                     TechData.techProcessing.saveText(recording());
                                     int current = Integer.parseInt(moneyProcessingInfaBalance.getText()) - TechAdapter.devises.get(i).getPoint();

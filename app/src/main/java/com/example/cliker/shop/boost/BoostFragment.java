@@ -74,6 +74,7 @@ public class BoostFragment extends Fragment implements BoostCallBack {
                             Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                             BoostAdapter.boosters.get(i).setSold(true);
                             BoostData.boostProcessing.saveText(recording());
+                            AlgemClick.algemFizraProcessing.saveText((BoostAdapter.boosters.get(i).getBoost() + AlgemClick.number) + "");
                             AlgemClick.number += BoostAdapter.boosters.get(i).getBoost();
                             FizraClick.number += BoostAdapter.boosters.get(i).getBoost();
                             int current = Integer.parseInt(moneyProcessingAlgemBalance.getText()) - BoostAdapter.boosters.get(i).getPoint();

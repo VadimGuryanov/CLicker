@@ -1,14 +1,11 @@
-package com.example.cliker.shop.boost;
+package com.example.cliker.easypoints;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.cliker.shop.clothes.Cloth;
-import com.example.cliker.shop.clothes.ClothData;
-
 import java.io.IOException;
 
-public class BoostProcessing {
+public class EventProcessing {
 
     Context context;
 
@@ -19,7 +16,7 @@ public class BoostProcessing {
 
     private SharedPreferences sharedPrefs;
 
-    public BoostProcessing(Context context) throws IOException {
+    public EventProcessing(Context context) throws IOException {
         this.context = context;
     }
 
@@ -41,7 +38,7 @@ public class BoostProcessing {
         sharedPrefs = context.getSharedPreferences(ALGEM, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
-        } return ClothData.start_value;
+        } return EventsData.start_value;
     }
 
 }

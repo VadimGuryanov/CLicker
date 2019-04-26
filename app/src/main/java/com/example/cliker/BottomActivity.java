@@ -3,6 +3,10 @@ package com.example.cliker;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+
+import com.example.cliker.clickers.AlgemFizraProcessing;
+import com.example.cliker.clickers.InfaProcessing;
+import com.example.cliker.easypoints.EventProcessing;
 import com.example.cliker.money.MoneyProcessingAlgem;
 import com.example.cliker.money.MoneyProcessingAlgemBalance;
 import com.example.cliker.money.MoneyProcessingFizra;
@@ -36,6 +40,9 @@ public class BottomActivity extends AppCompatActivity {
     public static ClothesProcessing clothesProcessing;
     public static TechProcessing techProcessing;
     public static WearCLothesProcessing wearCLothesProcessing;
+    public static AlgemFizraProcessing algemFizraProcessing;
+    public static InfaProcessing infaProcessing;
+    public static EventProcessing eventProcessing;
     public static int count_fizra;
     public static int count_infa;
     public static int count_algem;
@@ -80,6 +87,9 @@ public class BottomActivity extends AppCompatActivity {
             clothesProcessing = new ClothesProcessing(this);
             techProcessing = new TechProcessing(this);
             wearCLothesProcessing = new WearCLothesProcessing(this);
+            algemFizraProcessing = new AlgemFizraProcessing(this);
+            infaProcessing = new InfaProcessing(this);
+            eventProcessing = new EventProcessing(this);
         } catch (IOException e) {
             e.printStackTrace();
         }

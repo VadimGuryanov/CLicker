@@ -1,10 +1,12 @@
 package com.example.cliker.easypoints;
 
+import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
 
 public class EventsData {
 
     public static final int CAPACITY = 4;
+    public static EventProcessing eventProcessing = BottomActivity.eventProcessing;
 
     public static String[] event_name = new String[] {
             "Медосмотр",
@@ -34,4 +36,19 @@ public class EventsData {
     public static int[] f = new int[] {
             R.drawable.boy_itis
     };
+
+    public static String start_value = "false false false false";
+
+    public static boolean[] getIsSold() {
+        boolean[] booleans = new boolean[CAPACITY];
+        String supp = eventProcessing.getText();
+        String[] s = supp.split(" ");
+        for (int i = 0; i < CAPACITY; i++) {
+            booleans[i] = Boolean.valueOf(s[i]);
+        }
+        return booleans;
+    }
+
+
+
 }

@@ -28,8 +28,9 @@ public class InfaClick extends Fragment {
     private TextView balance;
     MoneyProcessingInfa moneyProcessingInfa = BottomActivity.moneyProcessingInfa;
     MoneyProcessingInfaBalance moneyProcessingInfaBalance = BottomActivity.moneyProcessingInfaBalance;
+    public static InfaProcessing infaProcessing = BottomActivity.infaProcessing;
 
-    public static int number = 1;
+    public static int number;
 
 
     public static InfaClick newInstance() {
@@ -44,6 +45,7 @@ public class InfaClick extends Fragment {
         infaButton = view.findViewById(R.id.btn_infa);
         infaClickPoints = view.findViewById(R.id.tv_infaClickPoints);
         balance = view.findViewById(R.id.infa_balance);
+        number = Integer.parseInt(infaProcessing.getText());
         infaButton.setOnClickListener(x -> {
             try {
                 infaButtonClick();

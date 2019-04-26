@@ -32,6 +32,8 @@ public class ClothData {
             R.drawable.t_fff
     };
 
+    public static String start_value = "false false false";
+
     public static int[] image_boy = new int[] {
             R.drawable.boy_rainbow,
             R.drawable.boy_polo,

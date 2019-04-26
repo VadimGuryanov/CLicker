@@ -19,6 +19,7 @@ import com.example.cliker.money.MoneyProcessingFizraBalance;
 import java.io.IOException;
 
 import static com.example.cliker.BottomActivity.moneyProcessingInfa;
+import static com.example.cliker.clickers.AlgemClick.algemFizraProcessing;
 
 public class FizraClick extends Fragment {
 
@@ -30,7 +31,7 @@ public class FizraClick extends Fragment {
     MoneyProcessingFizra moneyProcessingFizra = BottomActivity.moneyProcessingFizra;
     MoneyProcessingFizraBalance moneyProcessingFizraBalance = BottomActivity.moneyProcessingFizraBalance;
 
-    public static int number = 1;
+    public static int number;
 
 
     public static FizraClick newInstance() {
@@ -45,6 +46,7 @@ public class FizraClick extends Fragment {
         fizraButton = view.findViewById(R.id.btn_fizra);
         fizraClickPoints = view.findViewById(R.id.tv_fizraClickPoints);
         balance = view.findViewById(R.id.fizra_balance);
+        number = Integer.parseInt(algemFizraProcessing.getText());
         fizraButton.setOnClickListener(x -> {
             try {
                 fizraButtonClick();

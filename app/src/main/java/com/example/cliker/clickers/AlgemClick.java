@@ -27,8 +27,9 @@ public class AlgemClick extends Fragment {
     private TextView balance;
     MoneyProcessingAlgem moneyProcessingAlgem = BottomActivity.moneyProcessingAlgem;
     MoneyProcessingAlgemBalance moneyProcessingAlgemBalance = BottomActivity.moneyProcessingAlgemBalance;
+    public static AlgemFizraProcessing algemFizraProcessing = BottomActivity.algemFizraProcessing;
 
-    public static int number = 1;
+    public static int number;
 
 
     public static AlgemClick newInstance() {
@@ -43,6 +44,7 @@ public class AlgemClick extends Fragment {
         algemButton = view.findViewById(R.id.btn_algem);
         algemClickPoints = view.findViewById(R.id.tv_algemClickPoints);
         balance = view.findViewById(R.id.algem_balance);
+        number = Integer.parseInt(algemFizraProcessing.getText());
         algemButton.setOnClickListener(x -> {
             try {
                 algemButtonClick();

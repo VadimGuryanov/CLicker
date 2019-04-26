@@ -1,28 +1,49 @@
-package com.example.cliker.shop.boost;
+package com.example.cliker.clickers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.cliker.shop.clothes.Cloth;
-import com.example.cliker.shop.clothes.ClothData;
-
 import java.io.IOException;
 
-public class BoostProcessing {
+public class AlgemFizraProcessing {
 
     Context context;
 
+    int algemMoney, fizraMoney, infaMoney;
     public String myMoney = "myMoney";
 
-    public static final String ALGEM = "boost";
-    public static final String nameKey = "algem_boost";
+    public static final String ALGEMFIZRA = "f_a";
+    public static final String nameKey = "algefiz";
 
     private SharedPreferences sharedPrefs;
 
-    public BoostProcessing(Context context) throws IOException {
+    public AlgemFizraProcessing(Context context) throws IOException {
         this.context = context;
     }
 
+    public int getAlgemMoney() {
+        return algemMoney;
+    }
+
+    public void setAlgemMoney(int algemMoney) {
+        this.algemMoney = algemMoney;
+    }
+
+    public void setFizraMoney(int fizraMoney) {
+        this.fizraMoney = fizraMoney;
+    }
+
+    public void setInfaMoney(int infaMoney) {
+        this.infaMoney = infaMoney;
+    }
+
+    public int getFizraMoney() {
+        return fizraMoney;
+    }
+
+    public int getInfaMoney() {
+        return infaMoney;
+    }
 
     // метод для сохранения текста в файл настроек
     public void saveText(String value) {
@@ -38,10 +59,11 @@ public class BoostProcessing {
 
     // метод для получения текста из SharedPreferences по ключу
     public String getText() {
-        sharedPrefs = context.getSharedPreferences(ALGEM, Context.MODE_PRIVATE);
+        sharedPrefs = context.getSharedPreferences(ALGEMFIZRA, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
-        } return ClothData.start_value;
+        } return "1";
     }
+
 
 }
