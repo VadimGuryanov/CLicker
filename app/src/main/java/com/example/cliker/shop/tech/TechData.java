@@ -6,15 +6,15 @@ public class TechData {
     public static final int CAPASITY = 3;
 
     public static String[] tech_name = new String[] {
-            "Ноутбук",
-            "Мышка",
-            "Смартфон"
+            "Компутер",
+            "Ноут",
+            "Супер Ноут"
     };
 
     public static String[] description = new String[] {
-            "Запрогай что-нибуь на нем",
-            "Тачпад для слабаков",
-            "Тестируй на нем свои андроид приложения"
+            "Твой первый компьютер",
+            "Теперь всегда с собой",
+            "Теперь ты настоящий программист"
     };
 
     public static int[] point = new int[] {
@@ -22,9 +22,9 @@ public class TechData {
     };
 
     public static int[] image = new int[] {
-            R.drawable.t_itis,
-            R.drawable.t_rainbow,
-            R.drawable.t_polo
+            R.drawable.comp1,
+            R.drawable.comp2,
+            R.drawable.comp3
     };
 
     public static int[] boosts = new int[] {
