@@ -2,11 +2,13 @@ package com.example.cliker.shop.boost;
 
 import androidx.annotation.Nullable;
 
+import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
 
 public class BoostData {
 
     public static final int CAPASITY = 3;
+    public static BoostProcessing boostProcessing = BottomActivity.boostProcessing;
 
     public static String[] cloth_name = new String[] {
             "Благословение Абрамского",
@@ -33,4 +35,23 @@ public class BoostData {
     public static int[] boosts = new int[] {
             1,2,3
     };
+
+    public static boolean[] getIsSold() {
+        boolean[] booleans = new boolean[CAPASITY];
+        if (boostProcessing.getText() == null) {
+            String supp = boostProcessing.getText();
+            String[] s = supp.split(" ");
+            for (int i = 0; i < CAPASITY; i++) {
+                booleans[i] = Boolean.valueOf(s[i]);
+            }
+        }
+        else {
+            for (int i = 0; i < booleans.length; i++) {
+                booleans[i] = false;
+            }
+        }
+        return booleans;
+    }
+
+
 }

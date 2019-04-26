@@ -10,6 +10,7 @@ import com.example.cliker.money.MoneyProcessingFizraBalance;
 import com.example.cliker.money.MoneyProcessingInfa;
 import com.example.cliker.money.MoneyProcessingInfaBalance;
 import com.example.cliker.shop.ShopFragment;
+import com.example.cliker.shop.boost.BoostProcessing;
 import com.example.cliker.study.StudyFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class BottomActivity extends AppCompatActivity {
     public static MoneyProcessingFizraBalance moneyProcessingFizraBalance;
     public static MoneyProcessingInfaBalance moneyProcessingInfaBalance;
     public static MoneyProcessingAlgemBalance moneyProcessingAlgemBalance;
+    public static BoostProcessing boostProcessing;
     public static int count_fizra;
     public static int count_infa;
     public static int count_algem;
@@ -68,6 +70,7 @@ public class BottomActivity extends AppCompatActivity {
             moneyProcessingFizraBalance = new MoneyProcessingFizraBalance(this);
             moneyProcessingInfaBalance = new MoneyProcessingInfaBalance(this);
             moneyProcessingAlgemBalance = new MoneyProcessingAlgemBalance(this);
+            boostProcessing = new BoostProcessing(this);
         } catch (IOException e) {
             e.printStackTrace();
         }

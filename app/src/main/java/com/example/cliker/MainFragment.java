@@ -36,7 +36,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main, container, false);
         Button easy_point = view.findViewById(R.id.button6);
-        boy = view.findViewById(R.id.image_boy);
         easy_point.setOnClickListener(this);
         BottomActivity.count_fizra = Integer.parseInt(moneyProcessingFizraBalance.getText());
         BottomActivity.count_infa = Integer.parseInt(moneyProcessingInfaBalance.getText());

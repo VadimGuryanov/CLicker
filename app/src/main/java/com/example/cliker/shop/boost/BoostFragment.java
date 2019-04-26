@@ -15,6 +15,7 @@ import com.example.cliker.clickers.FizraClick;
 import com.example.cliker.clickers.InfaClick;
 import com.example.cliker.money.MoneyProcessingFizraBalance;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -52,7 +53,8 @@ public class BoostFragment extends Fragment implements BoostCallBack {
         if (boosters == null) {
             boosters = new ArrayList<>();
             for (int i = 0; i < BoostData.CAPASITY; i++) {
-                boosters.add(new Booster(BoostData.cloth_name[i], BoostData.description[i], BoostData.image[i], BoostData.point[i], BoostData.boosts[i]));
+                boosters.add(new Booster(BoostData.cloth_name[i], BoostData.description[i], BoostData.image[i], BoostData.point[i]
+                        , BoostData.boosts[i], BoostData.getIsSold()[i]));
             }
         }
         return boosters;
@@ -71,6 +73,7 @@ public class BoostFragment extends Fragment implements BoostCallBack {
                         if (Integer.parseInt(moneyProcessingAlgemBalance.getText()) >= BoostAdapter.boosters.get(i).getPoint()) {
                             Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                             BoostAdapter.boosters.get(i).setSold(true);
+                            BoostData.boostProcessing.saveText(recording());
                             AlgemClick.number += BoostAdapter.boosters.get(i).getBoost();
                             FizraClick.number += BoostAdapter.boosters.get(i).getBoost();
                             int current = Integer.parseInt(moneyProcessingAlgemBalance.getText()) - BoostAdapter.boosters.get(i).getPoint();
@@ -90,5 +93,13 @@ public class BoostFragment extends Fragment implements BoostCallBack {
         else {
             Toast.makeText(getContext(), "Этот бустер уже куплен", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private String recording() {
+        String bools = "";
+        for (int i = 0; i < BoostAdapter.boosters.size(); i++) {
+            bools += String.valueOf(BoostAdapter.boosters.get(i).isSold());
+        }
+        return bools;
     }
 }

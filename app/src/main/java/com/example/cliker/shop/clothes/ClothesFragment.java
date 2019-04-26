@@ -59,7 +59,6 @@ public class ClothesFragment extends Fragment implements ClothesCallBack, View.O
                                 if (Integer.parseInt(moneyProcessingFizraBalance.getText()) >= ClothesAdapter.clothes.get(i).getPoint()) {
                                     Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                                     ClothesAdapter.clothes.get(i).setSold(true);
-                                    MainFragment.boy.setImageResource(ClothesAdapter.clothes.get(i).getImage_boy());
                                     int current = Integer.parseInt(moneyProcessingFizraBalance.getText()) - ClothesAdapter.clothes.get(i).getPoint();
                                     String s = Integer.toString(current);
                                     moneyProcessingFizraBalance.saveText(s);
