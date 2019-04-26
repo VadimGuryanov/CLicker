@@ -6,12 +6,12 @@ public class Devise {
     private boolean isSold;
     private int boost;
 
-    public Devise(String name, String description, int image, int point, int boost) {
+    public Devise(String name, String description, int image, int point, int boost, boolean isSold) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.point = point;
-        this.isSold = false;
+        this.isSold = isSold;
         this.boost = boost;
     }
 

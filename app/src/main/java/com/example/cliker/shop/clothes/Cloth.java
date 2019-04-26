@@ -7,12 +7,12 @@ public class Cloth {
     private boolean isSold;
     private int image_boy;
 
-    public Cloth(String name, String description, int image, int point, int image_boy) {
+    public Cloth(String name, String description, int image, int point, int image_boy, boolean isSold) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.point = point;
-        this.isSold = false;
+        this.isSold = isSold;
         this.image_boy = image_boy;
     }
 

@@ -1,22 +1,22 @@
-package com.example.cliker.shop.boost;
+package com.example.cliker.shop.tech;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.io.IOException;
 
-public class BoostProcessing {
+public class TechProcessing {
 
     Context context;
 
     public String myMoney = "myMoney";
 
-    public static final String ALGEM = "boost";
-    public static final String nameKey = "algem_boost";
+    public static final String INFA = "boost";
+    public static final String nameKey = "infa_boost";
 
     private SharedPreferences sharedPrefs;
 
-    public BoostProcessing(Context context) throws IOException {
+    public TechProcessing(Context context) throws IOException {
         this.context = context;
     }
 
@@ -35,10 +35,11 @@ public class BoostProcessing {
 
     // метод для получения текста из SharedPreferences по ключу
     public String getText() {
-        sharedPrefs = context.getSharedPreferences(ALGEM, Context.MODE_PRIVATE);
+        sharedPrefs = context.getSharedPreferences(INFA, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
         } return "false false false";
     }
+
 
 }

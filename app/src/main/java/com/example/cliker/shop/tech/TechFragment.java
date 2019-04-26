@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
 import com.example.cliker.clickers.InfaClick;
+import com.example.cliker.shop.clothes.ClothData;
 
 import java.util.ArrayList;
 
@@ -50,7 +51,8 @@ public class TechFragment extends Fragment implements TechCallBack {
             devises = new ArrayList<>();
             for (int i = 0; i < TechData.CAPASITY; i++) {
                 devises.add(new Devise(TechData.tech_name[i], TechData.description[i],
-                        TechData.image[i], TechData.point[i], TechData.boosts[i]));
+                        TechData.image[i], TechData.point[i], TechData.boosts[i],
+                        TechData.getIsSold()[i]));
             }
         }
         return devises;
@@ -69,6 +71,7 @@ public class TechFragment extends Fragment implements TechCallBack {
                                     Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                                     TechAdapter.devises.get(i).setSold(true);
                                     InfaClick.number += TechAdapter.devises.get(i).getBoost();
+                                    TechData.techProcessing.saveText(recording());
                                     int current = Integer.parseInt(moneyProcessingInfaBalance.getText()) - TechAdapter.devises.get(i).getPoint();
                                     String s = Integer.toString(current);
                                     moneyProcessingInfaBalance.saveText(s);
@@ -86,5 +89,13 @@ public class TechFragment extends Fragment implements TechCallBack {
         else {
             Toast.makeText(getContext(), "Этот копьюктер куплен", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private String recording() {
+        String bools = "";
+        for (int i = 0; i < TechAdapter.devises.size(); i++) {
+            bools += String.valueOf(TechAdapter.devises.get(i).isSold() + " ");
+        }
+        return bools;
     }
 }

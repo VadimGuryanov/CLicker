@@ -59,6 +59,8 @@ public class ClothesFragment extends Fragment implements ClothesCallBack, View.O
                                 if (Integer.parseInt(moneyProcessingFizraBalance.getText()) >= ClothesAdapter.clothes.get(i).getPoint()) {
                                     Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
                                     ClothesAdapter.clothes.get(i).setSold(true);
+
+                                    ClothData.clothesProcessing.saveText(recording());
                                     int current = Integer.parseInt(moneyProcessingFizraBalance.getText()) - ClothesAdapter.clothes.get(i).getPoint();
                                     String s = Integer.toString(current);
                                     moneyProcessingFizraBalance.saveText(s);
@@ -83,10 +85,19 @@ public class ClothesFragment extends Fragment implements ClothesCallBack, View.O
             clothes = new ArrayList<>();
             for (int i = 0; i < ClothData.CAPASITY; i++) {
                 clothes.add(new Cloth(ClothData.cloth_name[i], ClothData.description[i],
-                        ClothData.image[i], ClothData.point[i], ClothData.image_boy[i]));
+                        ClothData.image[i], ClothData.point[i], ClothData.image_boy[i],
+                        ClothData.getIsSold()[i]));
             }
         }
         return clothes;
+    }
+
+    private String recording() {
+        String bools = "";
+        for (int i = 0; i < ClothesAdapter.clothes.size(); i++) {
+            bools += String.valueOf(ClothesAdapter.clothes.get(i).isSold() + " ");
+        }
+        return bools;
     }
 
     @Override

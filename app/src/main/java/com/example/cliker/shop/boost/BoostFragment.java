@@ -98,7 +98,7 @@ public class BoostFragment extends Fragment implements BoostCallBack {
     private String recording() {
         String bools = "";
         for (int i = 0; i < BoostAdapter.boosters.size(); i++) {
-            bools += String.valueOf(BoostAdapter.boosters.get(i).isSold());
+            bools += String.valueOf(BoostAdapter.boosters.get(i).isSold() + " ");
         }
         return bools;
     }
