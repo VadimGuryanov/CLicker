@@ -38,7 +38,7 @@ public class ClothesProcessing {
         sharedPrefs = context.getSharedPreferences(FIZRA, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
-        } return "false false false";
+        } return ClothData.start_value;
     }
 
 }

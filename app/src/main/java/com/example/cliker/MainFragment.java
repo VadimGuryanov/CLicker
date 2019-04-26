@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.cliker.clickers.AlgemClick;
+import com.example.cliker.clickers.InfaClick;
 import com.example.cliker.easypoints.EasyPointFragment;
 import com.example.cliker.shop.clothes.WearCLothesProcessing;
 

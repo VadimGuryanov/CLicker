@@ -33,6 +33,7 @@ public class TechData {
             1,2,3
     };
 
+    public static String start_value = "false false false";
 
     public static boolean[] getIsSold() {
         boolean[] booleans = new boolean[CAPASITY];

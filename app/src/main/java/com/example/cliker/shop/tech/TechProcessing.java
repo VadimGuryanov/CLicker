@@ -38,7 +38,7 @@ public class TechProcessing {
         sharedPrefs = context.getSharedPreferences(INFA, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
-        } return "false false false";
+        } return TechData.start_value;
     }
 
 
