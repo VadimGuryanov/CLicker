@@ -2,5 +2,5 @@ package com.example.cliker.shop.tech;
 
 public interface TechCallBack {
 
-    void itemClick(String s);
+    void itemClick(int i);
 }

@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
+import com.example.cliker.clickers.InfaClick;
+import com.example.cliker.shop.clothes.ClothData;
 
 import java.util.ArrayList;
 
@@ -17,7 +20,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import static com.example.cliker.BottomActivity.moneyProcessingAlgem;
+import static com.example.cliker.BottomActivity.moneyProcessingInfaBalance;
+
 public class TechFragment extends Fragment implements TechCallBack {
+
+
+    public static ArrayList<Devise> devises;
 
 
     public static TechFragment newInstance() {
@@ -38,26 +47,55 @@ public class TechFragment extends Fragment implements TechCallBack {
     }
 
     public ArrayList<Devise> getTech(){
-        ArrayList<Devise> devises = new ArrayList<>();
-        for (int i = 0; i < TechData.CAPASITY; i++) {
-            devises.add(new Devise(TechData.tech_name[i], TechData.description[i],
-                    TechData.image[i], TechData.point[i]));
+        if (devises == null) {
+            devises = new ArrayList<>();
+            for (int i = 0; i < TechData.CAPASITY; i++) {
+                devises.add(new Devise(TechData.tech_name[i], TechData.description[i],
+                        TechData.image[i], TechData.point[i], TechData.boosts[i],
+                        TechData.getIsSold()[i]));
+            }
         }
         return devises;
     }
 
     @Override
-    public void itemClick(String s) {
+    public void itemClick(int i) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Покупка")
-                .setMessage("Вы действительно хотите приобрести?")
-                .setCancelable(false)
-                .setPositiveButton("Да",
-                        (dialog, id) -> Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show())
-                .setNegativeButton("Отмена",
-                        (dialog, id) -> dialog.cancel());
+        if (!TechAdapter.devises.get(i).isSold()) {
+            builder.setTitle("Покупка")
+                    .setMessage("Вы действительно хотите приобрести?")
+                    .setCancelable(false)
+                    .setPositiveButton("Да",
+                            (dialog, id) -> {
+                                if (Integer.parseInt(moneyProcessingInfaBalance.getText()) >= TechAdapter.devises.get(i).getPoint()) {
+                                    Toast.makeText(getContext(), "Покупка совершена", Toast.LENGTH_SHORT).show();
+                                    TechAdapter.devises.get(i).setSold(true);
+                                    InfaClick.number += TechAdapter.devises.get(i).getBoost();
+                                    TechData.techProcessing.saveText(recording());
+                                    int current = Integer.parseInt(moneyProcessingInfaBalance.getText()) - TechAdapter.devises.get(i).getPoint();
+                                    String s = Integer.toString(current);
+                                    moneyProcessingInfaBalance.saveText(s);
+                                }
+                                else {
+                                    Toast.makeText(getContext(), "У вас недостаточно кликов по инфе", Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                    .setNegativeButton("Отмена",
+                            (dialog, id) -> dialog.cancel());
 
-        AlertDialog alert = builder.create();
-        alert.show();
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+        else {
+            Toast.makeText(getContext(), "Этот копьюктер куплен", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private String recording() {
+        String bools = "";
+        for (int i = 0; i < TechAdapter.devises.size(); i++) {
+            bools += String.valueOf(TechAdapter.devises.get(i).isSold() + " ");
+        }
+        return bools;
     }
 }

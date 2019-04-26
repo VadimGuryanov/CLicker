@@ -2,5 +2,5 @@ package com.example.cliker.shop.clothes;
 
 public interface ClothesCallBack {
 
-    void itemClick(String s);
+    void itemClick(int i);
 }

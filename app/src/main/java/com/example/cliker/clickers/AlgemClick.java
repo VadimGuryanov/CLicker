@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.cliker.BottomActivity;
 import com.example.cliker.R;
 import com.example.cliker.money.MoneyProcessingAlgem;
+import com.example.cliker.money.MoneyProcessingAlgemBalance;
 
 import java.io.IOException;
 
@@ -23,7 +24,9 @@ public class AlgemClick extends Fragment {
     TextView algemClickPoints;
     Button algemButton;
     int current;
+    private TextView balance;
     MoneyProcessingAlgem moneyProcessingAlgem = BottomActivity.moneyProcessingAlgem;
+    MoneyProcessingAlgemBalance moneyProcessingAlgemBalance = BottomActivity.moneyProcessingAlgemBalance;
 
     public static int number = 1;
 
@@ -39,6 +42,7 @@ public class AlgemClick extends Fragment {
         View view = inflater.inflate(R.layout.fragment_algem_click, container, false);
         algemButton = view.findViewById(R.id.btn_algem);
         algemClickPoints = view.findViewById(R.id.tv_algemClickPoints);
+        balance = view.findViewById(R.id.algem_balance);
         algemButton.setOnClickListener(x -> {
             try {
                 algemButtonClick();
@@ -54,6 +58,7 @@ public class AlgemClick extends Fragment {
     public void onResume() {
         super.onResume();
         algemClickPoints.setText(moneyProcessingAlgem.getText() +"");
+        balance.setText(moneyProcessingAlgemBalance.getText() +"");
     }
 
 
@@ -62,6 +67,10 @@ public class AlgemClick extends Fragment {
         String s = Integer.toString(current);
         moneyProcessingAlgem.saveText(s);
         algemClickPoints.setText(s);
+        current = Integer.parseInt(moneyProcessingAlgemBalance.getText())+number;
+        s = Integer.toString(current);
+        moneyProcessingAlgemBalance.saveText(s);
+        balance.setText(s);
     }
 
 

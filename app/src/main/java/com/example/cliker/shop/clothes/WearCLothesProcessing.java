@@ -1,49 +1,28 @@
-package com.example.cliker.money;
+package com.example.cliker.shop.clothes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.cliker.R;
+
 import java.io.IOException;
 
-public class MoneyProcessingFizra {
+public class WearCLothesProcessing {
+
 
     Context context;
 
-    int algemMoney, fizraMoney, infaMoney;
     public String myMoney = "myMoney";
 
-    public static final String FIZRA = "yprefs";
-    public static final String nameKey = "fizra";
+    public static final String WEAR_CLOTHE = "cloth";
+    public static final String nameKey = "wear_cloth";
 
     private SharedPreferences sharedPrefs;
 
-    public MoneyProcessingFizra(Context context) throws IOException {
+    public WearCLothesProcessing(Context context) throws IOException {
         this.context = context;
     }
 
-    public int getAlgemMoney() {
-        return algemMoney;
-    }
-
-    public void setAlgemMoney(int algemMoney) {
-        this.algemMoney = algemMoney;
-    }
-
-    public void setFizraMoney(int fizraMoney) {
-        this.fizraMoney = fizraMoney;
-    }
-
-    public void setInfaMoney(int infaMoney) {
-        this.infaMoney = infaMoney;
-    }
-
-    public int getFizraMoney() {
-        return fizraMoney;
-    }
-
-    public int getInfaMoney() {
-        return infaMoney;
-    }
 
     // метод для сохранения текста в файл настроек
     public void saveText(String value) {
@@ -59,9 +38,11 @@ public class MoneyProcessingFizra {
 
     // метод для получения текста из SharedPreferences по ключу
     public String getText() {
-        sharedPrefs = context.getSharedPreferences(FIZRA, Context.MODE_PRIVATE);
+        sharedPrefs = context.getSharedPreferences(WEAR_CLOTHE, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
-        } return "0";
+        } return "" + R.drawable.boy;
     }
+
+
 }

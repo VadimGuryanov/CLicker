@@ -1,49 +1,25 @@
-package com.example.cliker.money;
+package com.example.cliker.shop.clothes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.io.IOException;
 
-public class MoneyProcessingFizra {
+public class ClothesProcessing {
 
     Context context;
 
-    int algemMoney, fizraMoney, infaMoney;
     public String myMoney = "myMoney";
 
-    public static final String FIZRA = "yprefs";
-    public static final String nameKey = "fizra";
+    public static final String FIZRA = "boost";
+    public static final String nameKey = "fizra_boost";
 
     private SharedPreferences sharedPrefs;
 
-    public MoneyProcessingFizra(Context context) throws IOException {
+    public ClothesProcessing(Context context) throws IOException {
         this.context = context;
     }
 
-    public int getAlgemMoney() {
-        return algemMoney;
-    }
-
-    public void setAlgemMoney(int algemMoney) {
-        this.algemMoney = algemMoney;
-    }
-
-    public void setFizraMoney(int fizraMoney) {
-        this.fizraMoney = fizraMoney;
-    }
-
-    public void setInfaMoney(int infaMoney) {
-        this.infaMoney = infaMoney;
-    }
-
-    public int getFizraMoney() {
-        return fizraMoney;
-    }
-
-    public int getInfaMoney() {
-        return infaMoney;
-    }
 
     // метод для сохранения текста в файл настроек
     public void saveText(String value) {
@@ -62,6 +38,7 @@ public class MoneyProcessingFizra {
         sharedPrefs = context.getSharedPreferences(FIZRA, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
-        } return "0";
+        } return "false false false";
     }
+
 }
