@@ -21,75 +21,81 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/boy" />
-  
+
     <TextView
         android:id="@+id/fizre_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:text="fizra_count"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.577"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@+id/name_fizra"
+        app:layout_constraintTop_toBottomOf="@+id/algem_count" />
 
     <TextView
         android:id="@+id/infa_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="86dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
         android:text="infa_count"
-        app:layout_constraintEnd_toEndOf="@+id/fizre_count"
-        app:layout_constraintStart_toStartOf="@+id/fizre_count"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/name_infa"
         app:layout_constraintTop_toBottomOf="@+id/fizre_count" />
 
     <TextView
         android:id="@+id/algem_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="algem_count"
-        app:layout_constraintEnd_toEndOf="@+id/infa_count"
-        app:layout_constraintStart_toStartOf="@+id/infa_count"
-        app:layout_constraintTop_toBottomOf="@+id/infa_count" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/name_algem"
+        app:layout_constraintTop_toTopOf="@+id/iv_boy" />
 
     <TextView
         android:id="@+id/name_fizra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:text="fizra:"
-        app:layout_constraintEnd_toStartOf="@+id/fizre_count"
+        android:layout_marginStart="12dp"
+        android:text="Физкультура:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/name_algem" />
 
     <TextView
         android:id="@+id/name_infa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="infa:"
-        app:layout_constraintEnd_toEndOf="@+id/name_fizra"
-        app:layout_constraintStart_toStartOf="@+id/name_fizra"
+        android:layout_marginStart="142dp"
+        android:text="Информатика:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_fizra" />
 
     <TextView
         android:id="@+id/name_algem"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="algem:"
-        app:layout_constraintEnd_toEndOf="@+id/name_infa"
-        app:layout_constraintStart_toStartOf="@+id/name_infa"
-        app:layout_constraintTop_toBottomOf="@+id/name_infa" />
+        android:layout_height="19dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="АлГем:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/iv_boy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
