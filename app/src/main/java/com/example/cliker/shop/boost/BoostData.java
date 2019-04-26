@@ -25,9 +25,9 @@ public class BoostData {
     };
 
     public static int[] image = new int[] {
-            R.drawable.p_3,
-            R.drawable.p_2,
-            R.drawable.p_1
+            R.drawable.abr,
+            R.drawable.brain,
+            R.drawable.stiker
     };
 
     public static int[] boosts = new int[] {
