@@ -23,7 +23,6 @@ public class StudyFragment extends Fragment {
     ViewPager pager;
     StudyAdapter pagerAdapter;
 
-
     public static StudyFragment newInstance() {
         StudyFragment fragment = new StudyFragment();
 

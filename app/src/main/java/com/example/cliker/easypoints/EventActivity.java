@@ -77,10 +77,12 @@ public class EventActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BottomActivity.class);
         int i = getIntent().getIntExtra("index", 0);
         ClothData.wearCLothesProcessing.saveText(EventsData.f[0] + "");
+        /*
         int algemAndFizra = (i + 1 + AlgemClick.number);
         int infa = (i + 1 + InfaClick.number);
         AlgemClick.algemFizraProcessing.saveText(algemAndFizra + "");
         InfaClick.infaProcessing.saveText( infa + "");
+        */
         startActivity(intent);
     }
 
