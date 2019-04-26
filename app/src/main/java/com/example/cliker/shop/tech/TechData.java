@@ -26,4 +26,8 @@ public class TechData {
             R.drawable.comp2,
             R.drawable.comp3
     };
+
+    public static int[] boosts = new int[] {
+            1,2,3
+    };
 }

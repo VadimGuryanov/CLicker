@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class TechAdapter extends RecyclerView.Adapter<TechHolder> {
 
     private TechCallBack techCallBack;
-    public ArrayList<Devise> devises;
+    public static ArrayList<Devise> devises;
 
     public TechAdapter(TechCallBack techCallBack, ArrayList<Devise> devises) {
         this.techCallBack = techCallBack;
@@ -32,7 +32,7 @@ public class TechAdapter extends RecyclerView.Adapter<TechHolder> {
     @Override
     public void onBindViewHolder(@NonNull TechHolder holder, int position) {
         holder.bind(devises.get(position));
-        holder.itemView.setOnClickListener(view -> techCallBack.itemClick(position + ""));
+        holder.itemView.setOnClickListener(view -> techCallBack.itemClick(position));
     }
 
     @Override

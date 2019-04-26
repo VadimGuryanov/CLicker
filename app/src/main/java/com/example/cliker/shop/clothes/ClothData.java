@@ -27,4 +27,10 @@ public class ClothData {
             R.drawable.t_polo,
             R.drawable.t_fff
     };
+
+    public static int[] image_boy = new int[] {
+            R.drawable.boy_itis,
+            R.drawable.boy,
+            R.drawable.boy_itis
+    };
 }

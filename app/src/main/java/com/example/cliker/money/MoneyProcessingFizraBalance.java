@@ -5,45 +5,22 @@ import android.content.SharedPreferences;
 
 import java.io.IOException;
 
-public class MoneyProcessingFizra {
+public class MoneyProcessingFizraBalance {
 
     Context context;
 
-    int algemMoney, fizraMoney, infaMoney;
+    public static int fizraMoneyBalance;
     public String myMoney = "myMoney";
 
     public static final String FIZRA = "yprefs";
-    public static final String nameKey = "fizra";
+    public static final String nameKey = "fizraBalance";
 
     private SharedPreferences sharedPrefs;
 
-    public MoneyProcessingFizra(Context context) throws IOException {
+    public MoneyProcessingFizraBalance(Context context) throws IOException {
         this.context = context;
     }
 
-    public int getAlgemMoney() {
-        return algemMoney;
-    }
-
-    public void setAlgemMoney(int algemMoney) {
-        this.algemMoney = algemMoney;
-    }
-
-    public void setFizraMoney(int fizraMoney) {
-        this.fizraMoney = fizraMoney;
-    }
-
-    public void setInfaMoney(int infaMoney) {
-        this.infaMoney = infaMoney;
-    }
-
-    public int getFizraMoney() {
-        return fizraMoney;
-    }
-
-    public int getInfaMoney() {
-        return infaMoney;
-    }
 
     // метод для сохранения текста в файл настроек
     public void saveText(String value) {

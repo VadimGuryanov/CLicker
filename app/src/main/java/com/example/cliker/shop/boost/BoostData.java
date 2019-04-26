@@ -1,5 +1,7 @@
 package com.example.cliker.shop.boost;
 
+import androidx.annotation.Nullable;
+
 import com.example.cliker.R;
 
 public class BoostData {
@@ -26,5 +28,9 @@ public class BoostData {
             R.drawable.abr,
             R.drawable.brain,
             R.drawable.stiker
+    };
+
+    public static int[] boosts = new int[] {
+            1,2,3
     };
 }

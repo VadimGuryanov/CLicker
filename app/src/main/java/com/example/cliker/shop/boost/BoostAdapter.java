@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class BoostAdapter extends RecyclerView.Adapter<BoosterHolder>{
 
-    public ArrayList<Booster> boosters;
+    public static ArrayList<Booster> boosters;
     private BoostCallBack boostCallBack;
 
     public BoostAdapter(ArrayList<Booster> boosters, BoostCallBack boostCallBack) {
@@ -32,7 +32,7 @@ public class BoostAdapter extends RecyclerView.Adapter<BoosterHolder>{
     @Override
     public void onBindViewHolder(@NonNull BoosterHolder holder, int position) {
         holder.bind(boosters.get(position));
-        holder.itemView.setOnClickListener(view -> boostCallBack.itemClick(position + ""));
+        holder.itemView.setOnClickListener(view -> boostCallBack.itemClick(position));
     }
 
     @Override
