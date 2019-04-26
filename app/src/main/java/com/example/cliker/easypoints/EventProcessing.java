@@ -11,8 +11,8 @@ public class EventProcessing {
 
     public String myMoney = "myMoney";
 
-    public static final String ALGEM = "boost";
-    public static final String nameKey = "algem_boost";
+    public static final String AD = "boost";
+    public static final String nameKey = "events";
 
     private SharedPreferences sharedPrefs;
 
@@ -35,7 +35,7 @@ public class EventProcessing {
 
     // метод для получения текста из SharedPreferences по ключу
     public String getText() {
-        sharedPrefs = context.getSharedPreferences(ALGEM, Context.MODE_PRIVATE);
+        sharedPrefs = context.getSharedPreferences(AD, Context.MODE_PRIVATE);
         if (sharedPrefs.contains(nameKey)) {
             return (sharedPrefs.getString(nameKey, ""));
         } return EventsData.start_value;
